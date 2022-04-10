@@ -1,5 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import {articleSlice} from '../features/articles/articleSlice.js';
 
 export const store = configureStore({
-	reducer: {},
-});
+	reducer: combineReducers({
+	  article: articleSlice,	  
+	}),
+  });

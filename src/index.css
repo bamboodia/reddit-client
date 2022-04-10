@@ -8,3 +8,12 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+@font-face {
+    font-family: 'RockoFLF';
+    src:url('./fonts/RockoFLF/RockoFLF.ttf.woff') format('woff'),
+        url('./fonts/RockoFLF/RockoFLF.ttf.svg#RockoFLF') format('svg'),
+        url('./fonts/RockoFLF/RockoFLF.ttf.eot'),
+        url('./fonts/RockoFLF/RockoFLF.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
