@@ -1,0 +1,118 @@
+.sidebar {
+	width: 300px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;	
+	z-index: 20;
+	background-color: #001c27;
+}
+
+.home {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.logo-container {
+	align-self: flex-start;
+	display: inline-flex;
+	flex-direction: row;
+	margin: 5px auto;
+	order: -1;
+}
+
+.logo {
+	height: 32px;
+	padding: 8px 8px 8px 0;
+	width: 32px;
+}
+
+.reddit {
+	height: 18px;
+	margin-right: 10px;
+	width: auto;
+	align-self: center;
+}
+.minimal {
+	font-family: "RockoFLF";
+	font-size: 75%;
+	align-self: flex-start;
+}
+.subreddits {
+	padding: 20px;
+	align-self: stretch;
+	flex-grow: 1;
+}
+.info {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-3 {
+	width: 70%;
+	appearance: none;
+	background-color: #00b7ff;
+	border: 1px solid rgba(27, 31, 35, 0.15);
+	border-radius: 6px;
+	box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	padding: 6px 16px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+	box-shadow: none;
+	outline: none;
+}
+
+.button-3:hover {
+	background-color: #44caff;
+}
+
+.button-3:focus {
+	box-shadow: #007aaa;
+	outline: none;
+}
+
+.button-3:disabled {
+	background-color: #b3e9ff;
+	border-color: rgba(27, 31, 35, 0.1);
+	color: rgba(255, 255, 255, 0.8);
+	cursor: default;
+}
+
+.button-3:active {
+	background-color: #00a3e4;
+	box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+li {
+	margin: 10px;
+}
+i {
+	font-size: 1.5rem;
+	margin-right: 10px;
+}

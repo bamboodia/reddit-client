@@ -1,19 +1,14 @@
+@font-face {
+	font-family: "RockoFLF";
+	src: url("./fonts/RockoFLF/RockoFLF.ttf.woff") format("woff"), url("./fonts/RockoFLF/RockoFLF.ttf.svg#RockoFLF") format("svg"), url("./fonts/RockoFLF/RockoFLF.ttf.eot"), url("./fonts/RockoFLF/RockoFLF.ttf.eot?#iefix") format("embedded-opentype");
+	font-weight: normal;
+	font-style: normal;
+}
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: "RockoFLF";
+	color: rgb(255, 255, 255);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-@font-face {
-    font-family: 'RockoFLF';
-    src:url('./fonts/RockoFLF/RockoFLF.ttf.woff') format('woff'),
-        url('./fonts/RockoFLF/RockoFLF.ttf.svg#RockoFLF') format('svg'),
-        url('./fonts/RockoFLF/RockoFLF.ttf.eot'),
-        url('./fonts/RockoFLF/RockoFLF.ttf.eot?#iefix') format('embedded-opentype'); 
-    font-weight: normal;
-    font-style: normal;
+	background-color: #000;
 }
