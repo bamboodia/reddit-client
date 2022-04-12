@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebarstyles.css";
 
-function Sidebar() {
+const Sidebar = () => {
 	return (
 		<div className="sidebar">
 			<div className="home">
@@ -15,7 +15,7 @@ function Sidebar() {
 						</g>
 					</svg>
 					<svg className="reddit" viewBox="0 0 57 18" xmlns="http://www.w3.org/2000/svg">
-						<g fill="#D7DADC">
+						<g fill="#555">
 							<path d="M54.63,16.52V7.68h1a1,1,0,0,0,1.09-1V6.65a1,1,0,0,0-.93-1.12H54.63V3.88a1.23,1.23,0,0,0-1.12-1.23,1.2,1.2,0,0,0-1.27,1.11V5.55h-1a1,1,0,0,0-1.09,1v.07a1,1,0,0,0,.93,1.12h1.13v8.81a1.19,1.19,0,0,0,1.19,1.19h0a1.19,1.19,0,0,0,1.25-1.12A.17.17,0,0,0,54.63,16.52Z"></path>
 							<circle fill="#00b7ff" cx="47.26" cy="3.44" r="2.12"></circle>
 							<path d="M48.44,7.81a1.19,1.19,0,1,0-2.38,0h0v8.71a1.19,1.19,0,0,0,2.38,0Z"></path>
@@ -27,9 +27,9 @@ function Sidebar() {
 					</svg>
 					<div className="minimal">mini</div>
 				</div>
-				<button className="button-3" role="button">Login</button>
+				<button className="button-3">Login</button>
 			</div>
-			<div className="subreddits"><ul><li><i className="fa-solid fa-house"></i>Home</li><li><i className="fa-solid fa-fire"></i>Popular</li> <ul><h3>My Subreddits</h3><li>Escape From Tarkov</li><li>Formula 1</li></ul> </ul></div>
+			<div className="subreddits"><ul><li><i className="fa-solid fa-house"></i><h3>Home</h3></li><li><i className="fa-solid fa-fire"></i><h3>Popular</h3></li><li><i className="fa-solid fa-bookmark"></i><h3>My Subreddits</h3></li><ul><li className="subreddit-item">Escape From Tarkov</li><li className="subreddit-item">Formula 1</li></ul></ul></div>
 			<div className="info"> <ul><li><i className="fa-solid fa-circle-info"></i>About / Help</li></ul></div>
 		</div>
 	);

@@ -2,30 +2,14 @@ import React from "react";
 import "./App.css";
 import Sidebar from "./features/sidebar/sidebar.jsx";
 import Header from "./features/header/header.jsx";
-import Card from "./components/card.jsx";
+import Main from "./features/main/main.jsx";
 
 function App() {
 	return (
-		<div className="App">
-			<div className="sidebar-app">
-				<Sidebar />
-			</div>
-			<div className="main-app">
+		<div className="App">			
+				<Sidebar />			
 				<Header />
-				<div className="cards-app">
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-					<Card />
-				</div>
-			</div>
+				<Main />			
 		</div>
 	);
 }

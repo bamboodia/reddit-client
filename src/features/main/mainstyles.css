@@ -1,0 +1,9 @@
+.main {
+    grid-area: Main;
+    padding: 30px;	
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;    
+    align-items: center;	
+}

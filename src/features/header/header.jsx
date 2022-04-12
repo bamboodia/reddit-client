@@ -1,7 +1,7 @@
 import React from "react";
 import "./headerstyles.css";
 
-function Header() {
+const Header = () => {
 	return (
 		<div className="header">
 			<div className="subreddit-info">

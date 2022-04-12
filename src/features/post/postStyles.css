@@ -1,0 +1,20 @@
+.post-container {
+	width: 100%;
+}
+.post-media-container {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 15px;
+    margin-top: 10px;
+}
+
+.post-media-container .post-image {
+	width: 100%;
+}
+.post-details {
+	margin-top: 10px;
+    font-size: 1.2rem;
+}
+.author-details{
+    margin-right: 5px;
+}
