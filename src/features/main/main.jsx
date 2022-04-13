@@ -17,7 +17,7 @@ const Main = () => {
 	return (
 		<div className="main">
 			{posted.map((post, index) => (
-				<Post key={post.id} post={post} />
+				<Post key={post.id} post={post} rank={index + 1} />
 			))}
 		</div>		
 	);
