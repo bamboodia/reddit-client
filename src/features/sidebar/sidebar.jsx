@@ -1,7 +1,8 @@
 import React from "react";
 import "./sidebarstyles.css";
 
-const Sidebar = () => {
+
+const Sidebar = (props) => {
 	return (
 		<div className="sidebar">
 			<div className="home">
@@ -27,7 +28,7 @@ const Sidebar = () => {
 					</svg>
 					<div className="minimal">mini</div>
 				</div>
-				<button className="button-3">Login</button>
+				<button className="button-3" onClick={props.login}>Login</button>
 			</div>
 			<div className="subreddits"><ul><li><i className="fa-solid fa-house"></i><h3>Home</h3></li><li><i className="fa-solid fa-fire"></i><h3>Popular</h3></li><li><i className="fa-solid fa-bookmark"></i><h3>My Subreddits</h3></li><ul><li className="subreddit-item">Escape From Tarkov</li><li className="subreddit-item">Formula 1</li></ul></ul></div>
 			<div className="info"> <ul><li><i className="fa-solid fa-circle-info"></i>About / Help</li></ul></div>
