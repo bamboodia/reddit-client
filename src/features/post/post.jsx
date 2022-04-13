@@ -6,18 +6,18 @@ import abbreviate from '../../utils/abbreviateNumber'
 
 const Post = (props) => {
 	const { post } = props;
+	
 	return (
 		<article key={post.id}>
 			<Card>
-				<div className="post-container">
-					<div className="post-votes">
-						<div className="post-rank">{props.rank}</div>
-						<button></button>
+				<div className="post-container" >
+					<div className="post-votes">						
+						<i className="fa-solid fa-caret-up"></i>
 						<div className="votes">{abbreviate(post.score, 1, false, false)}</div>
-						<button></button>
+						<i className="fa-solid fa-caret-down"></i>
 					</div>
-					<div className="post-media-container">
-						<img src={post.thumbnail} alt="" className="post-image" />
+					<div className="post-media-container"  style={{ backgroundImage: `url(${post.thumbnail})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center'}}>
+						
 					</div>
 					<div className="post-details">
 						<h5 className="post-title">{post.title}</h5>
