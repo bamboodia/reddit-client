@@ -8,7 +8,7 @@ const makeId = () => {
 	return result;
 };
 const id = makeId();
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://bam-reddit-client.netlify.app";
 const clientId = "Ly93eqQOLyeChSWpzcUJXw";
 const secret = "GQPdWAFDUzp_sUsZH9-HneXsQNtEjw";
 const authPath = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=token&state=${id}&redirect_uri=${redirectUri}&scope=edit,history,identity,mysubreddits,read,subscribe,vote`;
