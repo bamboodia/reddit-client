@@ -11,15 +11,36 @@ const Main = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchPosts(selectedSubreddit));		
+		dispatch(fetchPosts(selectedSubreddit));
 	}, [selectedSubreddit]);
+
+	if (isLoading) {
+		return (
+			<div className="loading">
+				<div className="lds-ring">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="main">
+			<div className="page">
+				<div className="nav prev">prev</div>
+				<div className="nav next">next</div>
+			</div>
 			{posted.map((post, index) => (
 				<Post key={post.id} post={post} rank={index + 1} />
 			))}
-		</div>		
+			<div className="page">
+				<div className="nav prev">prev</div>
+				<div className="nav next">next</div>
+			</div>
+		</div>
 	);
 };
 

@@ -26,10 +26,14 @@ const postsSlice = createSlice({
 			state.isLoading = false;
 			state.error = true;
 		},
+    setSelectedSubreddit(state, action) {
+      state.selectedSubreddit = action.payload;
+      state.searchTerm = '';
+    },
 	},
 });
 
-export const { getPosts, getPostsSuccess, getPostsFailed } = postsSlice.actions;
+export const { getPosts, getPostsSuccess, getPostsFailed, setSelectedSubreddit,} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const fetchPosts = (subreddit) => async (dispatch) => {
@@ -53,8 +57,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
 
 const selectPosts = (state) => state.posts.posts;
 const selectSearchTerm = (state) => state.posts.searchTerm;
-export const selectSelectedSubreddit = (state) =>
-  state.reddit.selectedSubreddit;
+export const selectSelectedSubreddit = (state) => state.posts.selectedSubreddit;
 
 export const selectFilteredPosts = createSelector(
   [selectPosts, selectSearchTerm],

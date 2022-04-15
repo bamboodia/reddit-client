@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./postStyles.css";
+import React from 'react';
+import './postStyles.css';
+import './loadingPost.css';
 import Card from "../../components/card.jsx";
 import moment from "moment";
-import abbreviate from '../../utils/abbreviateNumber'
 
-const Post = (props) => {
-	const { post } = props;	
-	return (
-		<article key={post.id}>
+const loadingPost = (props) => {
+  const { post } = props;	
+  return (
+    <article key={post.id}>
 			<Card>
 				<div className="post-container" >
 					<div className="post-votes">						
 						<i className="fa-solid fa-caret-up"></i>
-						<div className="votes">{abbreviate(post.score, 1, false, false)}</div>
+						<div className="votes"></div>
 						<i className="fa-solid fa-caret-down"></i>
 					</div>
 					<div className="post-media-container"  style={{ backgroundImage: `url(${post.thumbnail})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center'}}>
@@ -30,6 +30,7 @@ const Post = (props) => {
 				</div>
 			</Card>
 		</article>
-	);
+  );
 };
-export default Post;
+
+export default loadingPost;

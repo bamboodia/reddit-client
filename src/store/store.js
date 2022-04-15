@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import postsReducer from './postsSlice';
-import userReducer from './userSlice';
+import subredditsReducer from './subredditsSlice';
+import optionsReducer from './optionsSlice'
 
 export const store = configureStore({
 	reducer: combineReducers({
 		posts: postsReducer,
-		user: userReducer,
+		subreddits: subredditsReducer,
+		options: optionsReducer
 	}),
   });

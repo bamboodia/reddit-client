@@ -3,16 +3,13 @@ import "./App.css";
 import Sidebar from "./features/sidebar/sidebar.jsx";
 import Header from "./features/header/header.jsx";
 import Main from "./features/main/main.jsx";
-import { auth } from "./api/officialApi";
-import { ParseHash } from "./utils/parseHash";
+import {useSelector} from 'react-redux';
 
 function App() {
-	if (window.location.hash) {
-		ParseHash(window.location.hash);
-	}
+	const options = useSelector((state) => state.options);	
 	return (
-		<div className="App">
-			<Sidebar login={auth} />
+		<div className="App" data-theme={options.darkMode}>
+			<Sidebar />
 			<Header />
 			<Main />
 		</div>
