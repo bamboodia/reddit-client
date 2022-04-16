@@ -4,6 +4,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: column;
+	flex-grow: 1;
 }
 
 .page {
@@ -13,10 +14,13 @@
 .nav {
 	margin: 20px;
 }
-.loading{
-    grid-area: Main;
-    align-items: center;
-    align-self: center;
+.loading {
+	grid-area: Main;
+	display: flex;
+	align-items: center;
+	align-self: center;
+	height: 100vh;
+	justify-content: center;
 }
 .lds-ring {
 	display: inline-block;
