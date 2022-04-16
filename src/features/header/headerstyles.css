@@ -1,28 +1,28 @@
 .header {
-    grid-area: Nav;
-	z-index: 10;    
+	grid-area: Nav;
+	z-index: 10;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--background-primary);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .subreddit-info {
-    margin: 0 20px;
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    justify-content: space-between;
-    align-items: center;
+	margin: 0 20px;
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	justify-content: space-between;
+	align-items: center;
 }
 .sorting {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 0.9rem;
-    background-color: var(--background-secondary);
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 0.8em;
+	background-color: var(--background-secondary);
 }
 
 h3 {
@@ -31,6 +31,100 @@ h3 {
 	margin-block-end: 0em;
 	font-weight: bold;
 }
-.darkmode{
-    cursor: pointer;
+.darkmode {
+	cursor: pointer;
+}
+.toggle-btn {
+	position: relative;
+	width: 60px;
+	height: 24px;
+	margin: 0 auto;
+	border-radius: 40px;
+}
+
+input[type="checkbox"] {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 2;
+}
+
+/* First toggle btn */
+
+#_1st-toggle-btn span {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	overflow: hidden;
+	opacity: 1;
+	background-color: #fff;
+	border-radius: 40px;
+	transition: 0.2s ease background-color, 0.2s ease opacity;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+#_1st-toggle-btn span:before,
+#_1st-toggle-btn span:after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#_1st-toggle-btn span:before {
+	background-color: #fff;
+	transform: translate(-22px, -40px);
+	z-index: 2;
+	pointer-events: none;
+}
+
+#_1st-toggle-btn span:after {
+	background-color: rgb(255, 230, 0);
+	transform: translate(-28px, 0px);
+	z-index: 1;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span {
+	background-color: #000;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:active + span {
+	opacity: 0.5;
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:before {
+	background-color: #000;
+	transform: translate(0px, -4px);
+}
+
+#_1st-toggle-btn input[type="checkbox"]:checked + span:after {
+	background-color: #fff;
+	transform: translate(6px, 0px);
+}
+
+.subreddit-name{
+	padding-left: 20px;
+	flex-grow: 1;
+	text-align: left;
+}
+
+@media (max-width: 1027px) {
+	.header {
+		grid-column: 1 / 3;
+	}
+	.hamburger{
+		display: block;
+	}
 }

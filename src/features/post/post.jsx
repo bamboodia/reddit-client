@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./postStyles.css";
 import Card from "../../components/card.jsx";
 import moment from "moment";
 import abbreviate from '../../utils/abbreviateNumber'
+import { setSelectedSubreddit, selectSelectedSubreddit } from "../../store/postsSlice";
 
 const Post = (props) => {
-	const { post } = props;	
+	const { post } = props;
+	const dispatch = useDispatch();	
 	return (
 		<article key={post.id}>
 			<Card>
@@ -22,7 +25,7 @@ const Post = (props) => {
 						<h5 className="post-title">{post.title}</h5>
 						<span className="author-details">
 							<span className="author-username">
-								Submitted <span>{moment.unix(post.created_utc).fromNow()}</span> by {post.author} to {post.subreddit}
+								Submitted <span>{moment.unix(post.created_utc).fromNow()}</span> by {post.author} to <span className="subreddit" onClick={() => dispatch(setSelectedSubreddit(`/${post.subreddit_name_prefixed}`))} >{post.subreddit}</span>
 							</span>
 						</span>
 						<span className="post-comments-container"></span>

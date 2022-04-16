@@ -39,6 +39,7 @@
 	flex-direction: column;
 	margin-top: 10px;
 	margin-left: 10px;
+	margin-right: 20px;
 	text-align: left;
 }
 .author-details {
@@ -65,4 +66,12 @@
 }
 .fa-caret-down:hover {
 	color: red;
+}
+.subreddit{
+	color: #00b7ff;
+}
+
+.subreddit:hover {
+	cursor: pointer;
+	color: #0095cf;
 }
