@@ -6,7 +6,7 @@
 	text-align: center;
 	display:grid;
 	grid-template-rows: 100px 1fr;
-	grid-template-columns: 20vmax 5fr;
+	grid-template-columns: 16vmax 5fr;
 	gap: 10px 0px;
 	grid-template-areas: 
     "Sidebar Nav"
@@ -16,7 +16,7 @@
 	scrollbar-width: none;
 	color: var(--font-primary);
 	transition: all 100ms ease-in;
-	font-size: 1vmax;
+	font-size: 0.8vmax;
 }
 ::-webkit-scrollbar {
 	display: none;

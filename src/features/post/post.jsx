@@ -1,38 +1,66 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./postStyles.css";
-import Card from "../../components/card.jsx";
+import abbreviate from "../../utils/abbreviateNumber";
 import moment from "moment";
-import abbreviate from '../../utils/abbreviateNumber'
-import { setSelectedSubreddit, selectSelectedSubreddit } from "../../store/postsSlice";
+import { setSelectedSubreddit, selectSelectedSubreddit, showPost } from "../../store/postsSlice";
+
+function useOutsideAlerter(ref, props) {
+	const { index } = props;
+	const dispatch = useDispatch();
+	useEffect(() => {
+		function handleClickOutside(event) {
+			if (ref.current && !ref.current.contains(event.target)) {
+				dispatch(showPost(index));
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [ref]);
+}
 
 const Post = (props) => {
-	const { post } = props;
-	const dispatch = useDispatch();	
+	const post = props.props;
+	const dispatch = useDispatch();
+	const wrapperRef = useRef(null);
+	console.log(post.comments);
+	useOutsideAlerter(wrapperRef, props);
 	return (
-		<article key={post.id}>
-			<Card>
-				<div className="post-container" >
-					<div className="post-votes">						
-						<i className="fa-solid fa-caret-up"></i>
-						<div className="votes">{abbreviate(post.score, 1, false, false)}</div>
-						<i className="fa-solid fa-caret-down"></i>
+		<div ref={wrapperRef} className="post">
+			<div className="post-votes">
+				<i className="fa-solid fa-caret-up"></i>
+				<div className="votes">{abbreviate(post.score, 0, false, false)}</div>
+				<i className="fa-solid fa-caret-down"></i>
+			</div>
+			<div className="post-main">
+				<div className="title">
+					<div>
+						<h3 className="post-title">{post.title}</h3>
 					</div>
-					<div className="post-media-container"  style={{ backgroundImage: `url(${post.thumbnail})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center'}}>
-						
-					</div>
-					<div className="post-details">
-						<h5 className="post-title">{post.title}</h5>
-						<span className="author-details">
-							<span className="author-username">
-								Submitted <span>{moment.unix(post.created_utc).fromNow()}</span> by {post.author} to <span className="subreddit" onClick={() => dispatch(setSelectedSubreddit(`/${post.subreddit_name_prefixed}`))} >{post.subreddit}</span>
-							</span>
-						</span>
-						<span className="post-comments-container"></span>
+					<div>
+						Submitted <span>{moment.unix(post.created_utc).fromNow()}</span> by {post.author}
 					</div>
 				</div>
-			</Card>
-		</article>
+				<div className="media">
+					<img src={post.url} alt="" />
+				</div>
+				<div className="info"></div>
+				<div className="comments">
+					<div>
+						{post.comments.map((comment) => (
+							<div className="comment" key={comment.id}>
+								<div><span className="author">{comment.author}</span> <span className="ago">{moment.unix(comment.created_utc).fromNow()}</span></div>
+								<div className="body"><p>{comment.body}</p></div>
+																
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
+
 export default Post;

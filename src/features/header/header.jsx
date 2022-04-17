@@ -13,7 +13,7 @@ const Header = () => {
 			<div className="subreddit-info">
 				<MobileNav />
 				<div className="subreddit-name">
-					<h3>{reddit.selectedSubreddit.slice(1)}</h3>
+					<h3>{reddit.selectedSubreddit.slice(1,-1)}</h3>
 				</div>
 				<div className="darkmode">
 					<div className="toggle-btn" id="_1st-toggle-btn">
@@ -24,7 +24,13 @@ const Header = () => {
 			</div>
 
 			<div className="sorting">
-				<div>HOT</div> <div>TOP</div> <div>NEW</div> <div>RISING</div> <div>CONTROVERSIAL</div>
+				<ul>
+					<li className="sort">HOT</li>
+					<li className="sort">TOP</li>
+					<li className="sort">NEW</li>
+					<li className="sort">RISING</li>
+					<li className="sort">CONTROVERSIAL</li>
+				</ul>				
 			</div>
 		</div>
 	);

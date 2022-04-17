@@ -74,12 +74,12 @@ const Sidebar = (props) => {
 			</div>
 
 			<div className="subreddits">
-				<h2>Subreddits</h2>
+				<h3>Subreddits</h3>
 				<ul className="subreddits-list">
 					{subreddits.map((subreddit) => (
 						<li key={subreddit.id} className="subreddit">
 							<button type="button" onClick={() => dispatch(setSelectedSubreddit(subreddit.url))}>
-								<img src={subreddit.icon_img || subreddit.mobile_banner_image || "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E"} alt={`${subreddit.display_name}`} className="subreddit-icon" style={{ border: `4px solid ${subreddit.primary_color}` }} />
+								<img src={subreddit.icon_img || subreddit.mobile_banner_image || "data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E"} alt={`${subreddit.display_name}`} className="subreddit-icon" style={{ border: `1px solid ${subreddit.primary_color}` }} />
 								{subreddit.display_name_prefixed}
 							</button>
 						</li>

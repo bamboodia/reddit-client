@@ -1,7 +1,6 @@
 .card {		
 	margin: 10px; 		
-	background-color: var(--background-secondary);
-	border-radius: 15px;
+	background-color: var(--background-primary);
 	-webkit-transition: all 100ms ease-in;
 	-webkit-transform: scale(1);
 	-ms-transition: all 100ms ease-in;

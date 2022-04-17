@@ -5,15 +5,16 @@
 	font-style: normal;
 }
 :root{
+	--reddit-color: #00b7ff;
 	--background-dark: #f5f5f5;
 	--background-primary: #f7f7f7;
 	--background-secondary: #f3f3f3;
 	--font-primary: #555;
 }
 [data-theme="true"] {
-	--background-dark: #080c0f;
-	--background-primary: #0c1116;
-	--background-secondary: #161c22;
+	--background-dark: #10141c;
+	--background-primary: #20272c;
+	--background-secondary: #32373d;
 	--font-primary: #999;
 }
 body {

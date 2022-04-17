@@ -1,77 +1,80 @@
-.post-container {
-	height: 100px;
-	display: flex;
-	flex-direction: row;
-	
-}
-.post-rank {
-	font-size: 1.4rem;
-}
-.post-votes {
-	min-width: 70px;
-    padding: 15px;
-    border-radius: 15px 0px 0px 15px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background-primary);
-}
-.votes {
+.post {	
+	position: relative;
+	z-index: 1;
+	background-color: var(--background-primary);
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: 25px 25px 475px 30px 1fr;
+	grid-template-areas:
+		"Votes Main right"
+		"Votes Main right"
+		". Main right"
+		". Main right"
+		". Main right";
+	width: 90%;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 	font-family: Helvetica, sans-serif;
 }
-.post-media-container {
-	margin-top:10px;
-	position: relative;	
-	height: 80px;
-	min-width: 200px;
-	max-width: 200px;
-	overflow: hidden;	
+.post p {
+	display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
-.post-media-container .post-image {
-	max-height: 100px;
-	width: auto;
-}
-
-.post-details {
+.post .post-votes {
+	grid-area: Votes;
 	display: flex;
 	flex-direction: column;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 20px;
 	text-align: left;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--background-primary);
 }
-.author-details {
-	margin-right: 0px;
-	font-size: 0.8rem;
+.post-main {
+	grid-area: Main;
+	display: flex;
+	flex-direction: column;
 }
-.post-title {
-	display: block;
-	font-size: 1em;
-	margin-block-start: 0em;
-	margin-block-end: 0em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	font-weight: bold;
+.post-title{
+	display: flex;
+	flex-direction: row;
 }
-.fa-caret-up {
-	margin: 0 auto;
+.post img {	
+	max-height: 500px;
+	align-self: center;
 }
-.fa-caret-up:hover {
-	color: green;
+.title {
+	padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.fa-caret-down {
-	margin: 0 auto;
+.media {
+	overflow: hidden;
 }
-.fa-caret-down:hover {
-	color: red;
-}
-.subreddit{
-	color: #00b7ff;
+.info {	
+	margin: 5px;
+	height: 30px;
 }
 
-.subreddit:hover {
-	cursor: pointer;
-	color: #0095cf;
+.comments {	
+	text-align: left;
+}
+.comment{
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+}
+.author{
+	font-weight: bold;
+	width: 200px;
+}
+.ago{
+	font-size: 0.8rem;
+}
+.body {
+	margin: 5px 0px;
+	padding: 10px 20px;
+	border-left: 1px solid var(--font-primary);
 }

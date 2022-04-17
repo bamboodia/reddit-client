@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./mainstyles.css";
-import { fetchPosts, selectFilteredPosts, setSearchTerm, fetchComments } from "../../store/postsSlice";
-import Post from "../post/post.jsx";
+import { fetchPosts, selectFilteredPosts, setSearchTerm, fetchComments, showPost } from "../../store/postsSlice";
+import Posts from "../post/posts.jsx";
 
 const Main = () => {
 	const reddit = useSelector((state) => state.posts);
@@ -12,8 +12,15 @@ const Main = () => {
 
 	useEffect(() => {
 		dispatch(fetchPosts(selectedSubreddit));
-	}, [selectedSubreddit]);
+	}, [selectedSubreddit]);	
 
+	const getPost = (index) => {
+		const getPost = (permalink) => {
+			dispatch(fetchComments(index, permalink))
+		};
+		return getPost
+	}
+	
 	if (isLoading) {
 		return (
 			<div className="main loading">
@@ -34,7 +41,7 @@ const Main = () => {
 				<div className="nav next">next</div>
 			</div>
 			{posted.map((post, index) => (
-				<Post key={post.id} post={post} rank={index + 1} />
+				<Posts key={post.id} post={post} getPost={getPost(index)} index={index}/>
 			))}
 			<div className="page">
 				<div className="nav prev">prev</div>

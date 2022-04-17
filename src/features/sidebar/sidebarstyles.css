@@ -1,6 +1,6 @@
 .sidebar {
 	position: fixed;
-	width: 20vmax;
+	width: 16vmax;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -43,11 +43,7 @@
 	font-size: 75%;
 	align-self: flex-start;
 }
-ul {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-}
+
 .subreddits {
 	display: flex;
     flex-direction: column;
@@ -79,7 +75,6 @@ ul {
 	align-items: center;
 	gap: 10px;
 	font-family: "RockoFLF";
-	font-size: 1rem;
 	color: var(--font-primary)
 }
 .subreddit img {
@@ -102,11 +97,14 @@ ul {
 	text-align: center
 }
 
-ul {
+.sidebar ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 }
 
 i {
@@ -117,6 +115,7 @@ i {
 }
 h3 {
 	display: inline;
+	
 }
 @media (max-width: 1027px) {
 	.sidebar{
