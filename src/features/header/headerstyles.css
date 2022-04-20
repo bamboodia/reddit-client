@@ -127,11 +127,14 @@ input[type="checkbox"] {
 }
 
 .subreddit-name {
-	padding-left: 20px;
-	flex-grow: 1;
 	text-align: left;
 }
-
+.search input {
+	border: 1px solid #555
+}
+.search input:target{
+	border: 1px solid #555
+}
 @media (max-width: 1027px) {
 	.header {
 		grid-column: 1 / 3;

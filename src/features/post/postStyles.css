@@ -68,6 +68,7 @@
 }
 .comment {
 	display: flex;
+	flex-grow: 1;
 	flex-direction: column;
 	border-left: 1px solid rgb(185, 185, 185);
 	background-color: var(--background-dark);
@@ -88,7 +89,8 @@
 	padding: 5px 10px;
 }
 .ago {
-	font-size: 0.8em;
+	font-size: 0.7em;
+	font-weight: normal;
 }
 .body {
 	margin: 5px 0px;

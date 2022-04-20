@@ -18,6 +18,7 @@ const Header = () => {
 				<div className="subreddit-name">
 					<h3>{reddit.selectedSubreddit.slice(1)}</h3>
 				</div>
+				<div className="search"><input type="text"/></div>
 				<div className="darkmode">
 					<div className="toggle-btn" id="_1st-toggle-btn">
 						<input type="checkbox" onClick={() => dispatch(setMode())} />
