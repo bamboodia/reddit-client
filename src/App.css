@@ -6,8 +6,8 @@
 	text-align: center;
 	display:grid;
 	grid-template-rows: 100px 1fr;
-	grid-template-columns: 16vmax 5fr;
-	gap: 10px 0px;
+	grid-template-columns: 20vmax 80vmax;
+	gap: 0px 0px;
 	grid-template-areas: 
     "Sidebar Nav"
     "Sidebar Main"; 		

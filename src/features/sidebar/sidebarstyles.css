@@ -1,6 +1,6 @@
 .sidebar {
 	position: fixed;
-	width: 16vmax;
+	width: 20vmax;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -107,7 +107,7 @@
 	flex-wrap: nowrap;
 }
 
-i {
+.sidebar i {
 	width: 30px;
 	font-size: 1.5rem;
 	margin-right: 10px;

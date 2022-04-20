@@ -1,4 +1,4 @@
-.post {	
+.post {
 	position: relative;
 	z-index: 1;
 	background-color: var(--background-primary);
@@ -17,10 +17,10 @@
 }
 .post p {
 	display: block;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
 }
 .post .post-votes {
 	grid-area: Votes;
@@ -36,45 +36,88 @@
 	display: flex;
 	flex-direction: column;
 }
-.post-title{
+.post-title {
 	display: flex;
 	flex-direction: row;
 }
-.post img {	
+.post img {
 	max-height: 500px;
 	align-self: center;
 }
 .title {
 	padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 .media {
 	overflow: hidden;
 }
-.info {	
+.info {
 	margin: 5px;
 	height: 30px;
 }
 
-.comments {	
+.comments {
 	text-align: left;
 }
-.comment{
-	margin: 5px;
+.comment-container {
+	display: flex;
+	flex-direction: row;
+	margin: 20px 0px;
+}
+.comment {
 	display: flex;
 	flex-direction: column;
+	border-left: 1px solid rgb(185, 185, 185);
+	background-color: var(--background-dark);
 }
-.author{
+.comment-score {
+	min-width: 50px;
+}
+.comment-votes {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: center;
+}
+.author {
 	font-weight: bold;
-	width: 200px;
+	background-color: var(--background-primary);
+	padding: 5px 10px;
 }
-.ago{
-	font-size: 0.8rem;
+.ago {
+	font-size: 0.8em;
 }
 .body {
 	margin: 5px 0px;
-	padding: 10px 20px;
-	border-left: 1px solid var(--font-primary);
+	padding: 10px 10px;
+	background-color: var(--background-dark);
 }
+.replies {
+	margin-left: 20px;
+	border-left: 1px solid rgb(185, 185, 185);
+}
+.reply {
+	margin: 0px 0px 15px 0px;
+}
+.reply-author {
+	font-weight: bold;
+	background-color: var(--background-primary);
+	padding: 5px 10px;
+}
+.reply-body {
+	background-color: var(--background-dark);
+	padding: 10px 0px 0px 10px;
+}
+.video-container {
+	width: 40vw;
+	height: 40vh;
+	align-self: center;
+}
+.video {
+	height: 100%;
+	width: 100%;
+}
+

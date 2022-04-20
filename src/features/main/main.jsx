@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./mainstyles.css";
-import { fetchPosts, selectFilteredPosts, setSearchTerm, fetchComments, showPost } from "../../store/postsSlice";
+import { fetchPosts, selectFilteredPosts, fetchComments } from "../../store/postsSlice";
 import Posts from "../post/posts.jsx";
 
 const Main = () => {
 	const reddit = useSelector((state) => state.posts);
-	const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
+	const { isLoading, selectedSubreddit, sorting } = reddit;
 	const posted = useSelector(selectFilteredPosts);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(fetchPosts(selectedSubreddit));
+		dispatch(fetchPosts(`${selectedSubreddit}`));
 	}, [selectedSubreddit]);	
 
 	const getPost = (index) => {
@@ -35,18 +35,10 @@ const Main = () => {
 	}
 
 	return (
-		<div className="main">
-			<div className="page">
-				<div className="nav prev">prev</div>
-				<div className="nav next">next</div>
-			</div>
+		<div className="main">			
 			{posted.map((post, index) => (
 				<Posts key={post.id} post={post} getPost={getPost(index)} index={index}/>
-			))}
-			<div className="page">
-				<div className="nav prev">prev</div>
-				<div className="nav next">next</div>
-			</div>
+			))}			
 		</div>
 	);
 };

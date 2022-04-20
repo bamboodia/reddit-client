@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./sidebarstyles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubreddits, selectSubreddits } from "../../store/subredditsSlice";
-import { setSelectedSubreddit, selectSelectedSubreddit } from "../../store/postsSlice";
+import { setSelectedSubreddit } from "../../store/postsSlice";
 
 const Sidebar = (props) => {
 	const dispatch = useDispatch();
